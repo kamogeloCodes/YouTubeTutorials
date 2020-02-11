@@ -10,43 +10,43 @@ namespace Tutorial02
     {
         static void Main(string[] args)
         {
-            //VowelCounter.
 
-            //Testing.
-            string testString = "kamogelo";
+            //Vowel Counter.
+            //Testing string.
+            string testString = "KAMOGELO"; //Answer is 5.
 
-            //Linq
-            int vowelCount = testString.Count(c => "aeiou".Contains(Char.ToLower(c)));
+            //Using Linq.
+            int vowelCounter_ = testString.Count(c => "aeiou".Contains(Char.ToLower(c)));
 
-            Console.WriteLine("Vowels found in that string : " + vowelCounter(testString));
-            Console.WriteLine("Vowels found in that string : " + vowelCount);
-
+            Console.WriteLine("The number of vowels in that string is : " + vowelCounter(testString));
+            Console.WriteLine("Using Linq -- The number of vowels in that string is : " + vowelCounter_);
 
 
             Console.ReadKey();
 
-
-
         }
 
-        //owelCounter Method.
+            //VowelCounter Method.
         public static int vowelCounter(string inputString)
         {
             char[] vowels = new char[] { 'a', 'e', 'i', 'o', 'u' };
-            int vowelCounter = 0;
+            int vowelCount = 0;
+            inputString = inputString.ToLower();
 
-            for(int k =0; k < inputString.Length; k++)
+            for(int k = 0; k < inputString.Length; k++)
             {
-                for(int c=0; c < vowels.Length; c++)
+                for(int c = 0; c < vowels.Length; c++)
                 {
                     if(inputString[k] == vowels[c])
                     {
-                        vowelCounter++;
+                        vowelCount++;
                     }
                 }
             }
 
-            return vowelCounter;
+            return vowelCount;
+
         }
+
     }
 }
